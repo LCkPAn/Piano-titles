@@ -26,7 +26,7 @@ class Tableau1 extends Phaser.Scene {
         return frames;
     }
 
-/** crée l'animation de la flamme avec les 2 images flame1 et 2*/
+/** crée l'animation de la flamme avec les 2 images flame1 et 2. Par contre je n'ai pas trouvé comment arrêter l'aniamtion.*/
     allAnims() {
         this.fireball = this.add.sprite(960, 620, "flame1")
         this.anims.create({
@@ -40,7 +40,7 @@ class Tableau1 extends Phaser.Scene {
         })
         this.fireball.play("flame")
     }
-    /** Permet au lanterne de s'éclairer et de monter vers le haut */
+    /** Permet au lanterne de monter vers le haut */
     createFly() {
         let x = Phaser.Math.Between(1, 1800)
         let y = 1000
@@ -71,7 +71,7 @@ class Tableau1 extends Phaser.Scene {
         this.etoile = this.add.sprite(-50, 300, "etoile")
         this.flamme = this.add.sprite(-70, 300, "flamme")
     }
-/** crée la scène*/
+/** crée la scène, j'ai mis des éléments en false pour les faires apparaitre plus tard*/
     creerFormes() {
 
         this.fond = this.add.image(800, 380, "fond")
@@ -97,7 +97,7 @@ class Tableau1 extends Phaser.Scene {
         this.arb3 = this.add.image(1450, 380, "arb3");
         this.grenou = this.add.image(1450, 520, "grenou")
     }
-    /** ce qui permet à mes images de bouger */
+    /** ce qui permet à mes images de bouger bas en haut */
 allTweens(){
         this.tweens.add({
             targets: [this.fly, this.spotlight],
@@ -108,6 +108,7 @@ allTweens(){
             delay: 0,
         })
     }
+    /** ce qui permet à mes images de bouger gauche à droite */
     tweensEtoile() {
         this.etoile.x = -50
         this.tweens.add({
@@ -119,7 +120,7 @@ allTweens(){
             delay: 0,
         })
     }
-
+    /** petit saut du panda, seul soucis quand on reste appuyer sur la touche il ce bloque */
     tweensSautPanda() {
         this.panda.x = 320
         this.tweens.add({
@@ -132,7 +133,7 @@ allTweens(){
             yoyo: true,
         })
     }
-
+    /** idem que panda */
     tweensSautGrenou() {
         this.grenou.x = 1450
         this.tweens.add({
