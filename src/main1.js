@@ -1,7 +1,19 @@
 let gameConfig = {
     type: Phaser.AUTO,
-    width: 960,
-    height: 540,
+    width: 1800,
+    height: 800,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        min: {
+            width: 800,
+            height: 600,
+        },
+        max: {
+            width: 1800,
+            height: 800,
+        },
+    },
     backgroundColor: '#ffffff',
     parent: 'game',
     physics: {
