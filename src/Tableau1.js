@@ -47,7 +47,7 @@ class Tableau1 extends Phaser.Scene {
 
         this.fly = this.add.sprite(x,y, 'fly')
         this.allTweens()
-        
+
 
 
         /** Généere aléatoirement des particules de fleur de cerisier sur les arbres entre X et Y position */
